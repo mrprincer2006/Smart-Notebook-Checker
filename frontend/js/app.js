@@ -34,7 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('file', file);
 
         try {
-            const response = await fetch('http://localhost:8000/scan', {
+            // Use environment variable or default to localhost
+            // Use environment variable or default to Vercel api path
+            const backendUrl = window.BACKEND_URL || '/api';
+            const response = await fetch(`${backendUrl}/scan`, {
                 method: 'POST',
                 body: formData
             });

@@ -2,6 +2,7 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 import shutil
 import os
+import re
 from .ocr_engine import OCREngine
 from .math_logic import MathSolver
 
